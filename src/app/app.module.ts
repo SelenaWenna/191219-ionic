@@ -9,6 +9,15 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import {HttpClientModule} from '@angular/common/http';
+import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
+import {InMemoryDataService} from './services/in-memory-data/in-memory-data.service';
+
+import {NgxsModule} from '@ngxs/store';
+import {NgxsReduxDevtoolsPluginModule} from '@ngxs/devtools-plugin';
+import {NgxsLoggerPluginModule} from '@ngxs/logger-plugin';
+import {HeroesState} from './state/heroes/heroes.state';
+
 // import {HeroesComponent} from './pages/heroes/heroes.component';
 // import {HeroDetailComponent} from './pages/hero-detail/hero-detail.component';
 // import {MessagesComponent} from './components/messages/messages.component';
@@ -21,7 +30,18 @@ import {DashboardComponent} from './pages/dashboard/dashboard.component';
     DashboardComponent
   ],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [
+      BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+        InMemoryDataService, { dataEncapsulation: false }
+    ),
+    NgxsModule.forRoot([HeroesState]),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
+    NgxsLoggerPluginModule.forRoot()
+  ],
   providers: [
     StatusBar,
     SplashScreen,

@@ -4,7 +4,7 @@
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "scripts": {
-    "serve-devLocal": "ionic serve -с --configuration=devLocal",
+    "serve": "ionic serve --address localhost --port 8181",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",

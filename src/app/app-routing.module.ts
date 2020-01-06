@@ -1,6 +1,7 @@
-import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import {NgModule} from '@angular/core';
+import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
+import {DashboardComponent} from './pages/dashboard/dashboard.component';
+// import {HeroDetailComponent} from './pages/hero-detail/hero-detail.component';
 
 const routes: Routes = [
   // {

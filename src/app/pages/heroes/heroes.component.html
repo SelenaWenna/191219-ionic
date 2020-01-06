@@ -1,19 +1,28 @@
-<h2>My Heroes</h2>
-<div>
-  <label>Hero name:
-    <input #heroName />
-  </label>
-  <button (click)="add(heroName.value); heroName.value=''">
-    add
-  </button>
-</div>
-<ul class="heroes">
-  <li
-    *ngFor="let hero of heroes | async">
-    <a routerLink="/heroes/{{hero.id}}">
-       <span class="badge">{{hero.id}}</span>{{hero.name}}
-    </a>
-    <button class="delete" title="delete hero"
-            (click)="delete(hero)">x</button>
-  </li>
-</ul>
+<ion-title>My Heroes</ion-title>
+<!--<div>-->
+<!--  <label>Hero name:-->
+<!--    <input #heroName />-->
+<!--  </label>-->
+<!--  <button (click)="add(heroName.value); heroName.value=''">-->
+<!--    add-->
+<!--  </button>-->
+<!--</div>-->
+<ion-grid>
+  <ion-row>
+    <ion-col
+            size="12"
+        *ngFor="let hero of heroes | async"
+    >
+<ion-list>
+  <ion-item href="/heroes/{{hero.id}}">
+      <ion-avatar slot="start">
+        <img [src]="hero.img">
+      </ion-avatar>
+      <ion-label>{{hero.name}}</ion-label>
+<!--    <button class="delete" title="delete hero"-->
+<!--            (click)="delete(hero)">x</button>-->
+  </ion-item>
+</ion-list>
+    </ion-col>
+  </ion-row>
+</ion-grid>

@@ -2,11 +2,11 @@ import {Action, createSelector, Selector, State, StateContext} from '@ngxs/store
 import {HeroesStateModel, Hero} from './heroes.state.model';
 // import {LoadingStateEnum} from '@shared/enums/loadingState.enum';
 import {
-  CreateHero,
-  GetHero,
-  GetHeroesList,
-  UpdateHero,
-  DeleteHero
+    CreateHero,
+    GetHero,
+    GetHeroesList,
+    UpdateHero,
+    DeleteHero, SetSearch
 } from './heroes.actions';
 // import {LoadableEntityState} from '@shared/base/state/loadable-entity.state';
 import {HeroesService} from '../../services/heroes/heroes.service';
@@ -20,7 +20,8 @@ import {Observable, of} from 'rxjs';
     defaults: {
         // clientsMap: new Map<string, ClientItemPayloadInterface>(),
         // loadingState: LoadingStateEnum.None
-      heroes: []
+      heroes: [],
+      search: 'Dr',
     }
 })
 export class HeroesState {
@@ -44,7 +45,13 @@ export class HeroesState {
      */
     @Selector()
     public static heroes(state: HeroesStateModel) {
-      return state.heroes;
+        const search = state.search.toLowerCase();
+        return state.search ? state.heroes.filter(hero => hero.name.toLowerCase().includes(search)) : state.heroes;
+        // return Array.from(state.clientsMap.values());
+    }
+    @Selector()
+    public static search(state: HeroesStateModel) {
+      return state.search;
         // return Array.from(state.clientsMap.values());
     }
 
@@ -64,7 +71,19 @@ export class HeroesState {
         // super();
     }
 
-  /**
+    /**
+     * method for getting hero
+     * @param patchState - method for patching state
+     */
+    @Action(SetSearch)
+    setSearch({patchState, getState}: StateContext<HeroesStateModel>, {payload}: GetHero) {
+        // patchState({loadingState: LoadingStateEnum.Loading});
+        patchState({
+            // loadingState: LoadingStateEnum.Loaded,
+            search: payload
+        });
+    }
+    /**
    * method for getting heroesList
    * @param patchState - method for patching state
    */

@@ -1,11 +1,16 @@
 <ion-app>
   <ion-header>
     <ion-toolbar>
-      <ion-title>{{title}}</ion-title>
-      <ion-buttons slot="secondary">
-        <ion-button>Dashboard</ion-button>
-        <ion-button>Heroes</ion-button>
-      </ion-buttons>
+<!--      <ion-title>{{title}}</ion-title>-->
+      <ion-searchbar
+              (ionChange)="HeroesGetList($event.target.value)"
+              [value]="search | async"
+              slot="primary"
+      ></ion-searchbar>
+<!--      <ion-buttons slot="secondary">-->
+<!--        <ion-button href="/dashboard">Dashboard</ion-button>-->
+<!--        <ion-button href="/heroes">Heroes</ion-button>-->
+<!--      </ion-buttons>-->
     </ion-toolbar>
   </ion-header>
   <ion-content>

@@ -18,7 +18,7 @@ import {NgxsReduxDevtoolsPluginModule} from '@ngxs/devtools-plugin';
 import {NgxsLoggerPluginModule} from '@ngxs/logger-plugin';
 import {HeroesState} from './state/heroes/heroes.state';
 
-// import {HeroesComponent} from './pages/heroes/heroes.component';
+import {HeroesComponent} from './pages/heroes/heroes.component';
 // import {HeroDetailComponent} from './pages/hero-detail/hero-detail.component';
 // import {MessagesComponent} from './components/messages/messages.component';
 import {DashboardComponent} from './pages/dashboard/dashboard.component';
@@ -28,6 +28,7 @@ import {DashboardComponent} from './pages/dashboard/dashboard.component';
   declarations: [
     AppComponent,
     DashboardComponent,
+    HeroesComponent,
     // HeroDetailComponent
   ],
   entryComponents: [],

@@ -9,6 +9,15 @@ export class GetHeroesList {
 }
 
 /**
+ * action for set search string
+ */
+export class SetSearch {
+    static readonly type = '[Heroes] Set search string';
+
+    constructor(public payload) {
+    }
+}
+/**
  * action for getting hero from backend
  */
 export class GetHero {

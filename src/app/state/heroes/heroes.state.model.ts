@@ -6,6 +6,7 @@
 export class HeroesStateModel {
     // clientsMap: Map<string, ClientItemPayloadInterface>;
   heroes: Hero[];
+  search: string;
 }
 
 /**

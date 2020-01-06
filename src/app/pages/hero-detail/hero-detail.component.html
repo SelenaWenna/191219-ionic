@@ -1,11 +1,40 @@
-<div *ngIf="hero">
-  <h2>Hero {{hero?.name}} details</h2>
-  <div><span>id: </span>{{hero?.id}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="hero.name" placeholder="name"/>
-    </label>
-  </div>
-  <button (click)="save()">save</button>
-  <button (click)="goBack()">cancel</button>
-</div>
+<ion-grid
+        *ngIf="hero"
+        class="full-width">
+  <ion-title>Hero {{hero?.name}} details</ion-title>
+  <ion-row>
+    <ion-col
+            size="12"
+    >
+      <form onsubmit="save">
+        <ion-list lines="full" class="ion-no-margin ion-no-padding">
+          <ion-item>
+            <ion-label position="stacked">Image <ion-text color="danger"></ion-text></ion-label>
+            <ion-input required type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Name <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Description</ion-label>
+            <ion-textarea type="text"></ion-textarea>
+          </ion-item>
+        </ion-list>
+      </form>
+
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<!--      <div *ngIf="hero">-->
+<!--  <h2>Hero {{hero?.name}} details</h2>-->
+<!--  <div><span>id: </span>{{hero?.id}}</div>-->
+<!--  <div>-->
+<!--    <label>name:-->
+<!--      <input [(ngModel)]="hero.name" placeholder="name"/>-->
+<!--    </label>-->
+<!--  </div>-->
+<!--  <button (click)="save()">save</button>-->
+<!--  <button (click)="goBack()">cancel</button>-->
+<!--</div>-->

@@ -6,7 +6,6 @@ import {StatusBar} from '@ionic-native/status-bar/ngx';
 import {Select, Store} from '@ngxs/store';
 import {HeroesState} from './state/heroes/heroes.state';
 import {Observable} from 'rxjs';
-import {SetSearch} from './state/heroes/heroes.actions';
 
 @Component({
   selector: 'app-root',
@@ -15,11 +14,8 @@ import {SetSearch} from './state/heroes/heroes.actions';
 })
 export class AppComponent {
   title = 'Tour of Heroes';
-  @Select(HeroesState.search)
-  search: Observable<string>;
 
   constructor(
-    private store: Store,
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar
@@ -33,7 +29,5 @@ export class AppComponent {
       this.splashScreen.hide();
     });
   }
-  HeroesGetList(search) {
-    this.store.dispatch(new SetSearch(search));
-  }
+
 }

@@ -21,7 +21,7 @@ import {Observable, of} from 'rxjs';
         // clientsMap: new Map<string, ClientItemPayloadInterface>(),
         // loadingState: LoadingStateEnum.None
       heroes: [],
-      search: 'Dr',
+      search: '',
     }
 })
 export class HeroesState {

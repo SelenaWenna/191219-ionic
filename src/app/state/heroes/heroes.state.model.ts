@@ -15,5 +15,6 @@ export class HeroesStateModel {
 export interface Hero {
   id: number;
   name: string;
-  img: string;
+  img?: string;
+  description?: string;
 }

@@ -1,0 +1,5 @@
+<ion-searchbar
+  (ionChange)="HeroesGetList($event.target.value)"
+  [value]="search | async"
+  slot="primary"
+></ion-searchbar>

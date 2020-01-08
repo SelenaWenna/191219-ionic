@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7be39986-6ec0-4470-9c58-7a55519ac4f6" name="Default Changelist" comment="Update npm" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1VWBzCOtikNwnVcZRyBfdjUsRRT" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="excluded.www.directory" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs.protractor.protractor_package" value="$PROJECT_DIR$/node_modules/protractor" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/environments" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.serve">
+    <configuration name="Tests (app)" type="JavaScriptTestRunnerKarma">
+      <config-file value="$PROJECT_DIR$/karma.conf.js" />
+      <karma-package-dir value="$PROJECT_DIR$/node_modules/@angular/cli" />
+      <working-directory value="$PROJECT_DIR$" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="E2E Tests (app)" type="JavaScriptTestRunnerProtractor">
+      <config-file value="$PROJECT_DIR$/e2e/protractor.conf.js" />
+      <node-interpreter value="project" />
+      <protractor-package value="$PROJECT_DIR$/node_modules/protractor" />
+      <protractor-options value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="serve" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="serve" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.Angular Application" />
+      <item itemvalue="Karma.Tests (app)" />
+      <item itemvalue="npm.serve" />
+      <item itemvalue="npm.Angular CLI Server" />
+      <item itemvalue="Protractor.E2E Tests (app)" />
+    </list>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7be39986-6ec0-4470-9c58-7a55519ac4f6" name="Default Changelist" comment="" />
+      <created>1577359230902</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1577359230902</updated>
+      <workItem from="1577359232588" duration="300000" />
+      <workItem from="1577775289306" duration="5704000" />
+      <workItem from="1577781496408" duration="3265000" />
+      <workItem from="1578307939281" duration="17042000" />
+      <workItem from="1578384323505" duration="1791000" />
+      <workItem from="1578483478946" duration="853000" />
+    </task>
+    <task id="LOCAL-00001" summary="Add angular components of heroes">
+      <created>1577779648704</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1577779648704</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add ngxs">
+      <created>1577781834959</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1577781834959</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add dashboard grid">
+      <created>1578308748956</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1578308748956</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Search heroes">
+      <created>1578327193657</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1578327193657</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Refactor searchbar">
+      <created>1578330468474</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1578330468474</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Refactor searchbar">
+      <created>1578334223681</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1578334223682</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Update npm">
+      <created>1578395646383</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1578395646383</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add angular components of heroes" />
+    <MESSAGE value="Add ngxs" />
+    <MESSAGE value="Add dashboard grid" />
+    <MESSAGE value="Search heroes" />
+    <MESSAGE value="Refactor searchbar" />
+    <MESSAGE value="Update npm" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update npm" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="93" y="158" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577782332135">
+      <screen x="0" y="0" width="2560" height="1053" />
+    </state>
+    <state x="93" y="158" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1053@0.0.2560.1053" timestamp="1577782332135" />
+    <state x="1516" y="100" width="770" height="797" key="CommitChangelistDialog2" timestamp="1578488620058">
+      <screen x="0" y="0" width="2560" height="1053" />
+    </state>
+    <state x="1516" y="100" width="770" height="797" key="CommitChangelistDialog2/0.0.2560.1053@0.0.2560.1053" timestamp="1578488620058" />
+    <state x="502" y="63" width="2050" height="868" key="DiffContextDialog" timestamp="1577781823154">
+      <screen x="0" y="0" width="2560" height="1053" />
+    </state>
+    <state x="502" y="63" width="2050" height="868" key="DiffContextDialog/0.0.2560.1053@0.0.2560.1053" timestamp="1577781823154" />
+    <state x="1686" y="258" width="426" height="480" key="FileChooserDialogImpl" timestamp="1578384556199">
+      <screen x="0" y="0" width="2560" height="1053" />
+    </state>
+    <state x="1686" y="258" width="426" height="480" key="FileChooserDialogImpl/0.0.2560.1053@0.0.2560.1053" timestamp="1578384556199" />
+    <state width="1245" height="262" key="GridCell.Tab.0.bottom" timestamp="1578407560168">
+      <screen x="0" y="0" width="2560" height="1053" />
+    </state>
+    <state width="1245" height="262" key="GridCell.Tab.0.bottom/0.0.2560.1053@0.0.2560.1053" timestamp="1578407560168" />
+    <state width="1245" height="262" key="GridCell.Tab.0.center" timestamp="1578407560166">
+      <screen x="0" y="0" width="2560" height="1053" />
+    </state>
+    <state width="1245" height="262" key="GridCell.Tab.0.center/0.0.2560.1053@0.0.2560.1053" timestamp="1578407560166" />
+    <state width="1245" height="262" key="GridCell.Tab.0.left" timestamp="1578407560165">
+      <screen x="0" y="0" width="2560" height="1053" />
+    </state>
+    <state width="1245" height="262" key="GridCell.Tab.0.left/0.0.2560.1053@0.0.2560.1053" timestamp="1578407560165" />
+    <state width="1245" height="262" key="GridCell.Tab.0.right" timestamp="1578407560167">
+      <screen x="0" y="0" width="2560" height="1053" />
+    </state>
+    <state width="1245" height="262" key="GridCell.Tab.0.right/0.0.2560.1053@0.0.2560.1053" timestamp="1578407560167" />
+    <state x="1708" y="213" width="382" height="569" key="RollbackChangesDialog" timestamp="1578488577394">
+      <screen x="0" y="0" width="2560" height="1053" />
+    </state>
+    <state x="1708" y="213" width="382" height="569" key="RollbackChangesDialog/0.0.2560.1053@0.0.2560.1053" timestamp="1578488577394" />
+  </component>
+</project>

@@ -28,11 +28,6 @@ export class HeroesService {
     }
 
     /** POST: add a new hero to the server */
-    addHero(hero: Hero): Observable<Hero> {
-        return this.http.post<Hero>(this.heroesUrl, hero, this.httpOptions);
-    }
-
-    /** POST: add a new hero to the server */
     updateHero(hero: Hero): Observable<Hero> {
         return this.http.put<Hero>(this.heroesUrl, hero, this.httpOptions);
     }

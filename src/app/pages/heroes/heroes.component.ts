@@ -13,7 +13,7 @@ import {Router} from '@angular/router';
 })
 export class HeroesComponent implements OnInit {
     @Select(HeroesState.heroes)
-    heroes: Observable<Hero[]>;
+    heroes$: Observable<Hero[]>;
 
     constructor(
         private store: Store,

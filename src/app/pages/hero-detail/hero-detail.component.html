@@ -10,22 +10,20 @@
 </ion-header>
 <ion-content>
     <form [formGroup]="heroForm">
-        <ion-list lines="full" class="ion-no-margin ion-no-padding">
-            <ion-img [src]="hero?.img"></ion-img>
-            <ion-item>
-                <ion-label position="stacked">Name
-                    <ion-text color="danger">*</ion-text>
-                </ion-label>
-                <ion-input required type="text"
-                           formControlName="name"
-                ></ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-label position="stacked">Description</ion-label>
-                <ion-textarea type="text"
-                              formControlName="description"
-                ></ion-textarea>
-            </ion-item>
-        </ion-list>
+        <ion-img class="hero-avatar" [src]="hero?.img"></ion-img>
+        <ion-item>
+            <ion-label position="stacked">Name
+                <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-input required type="text"
+                       formControlName="name"
+            ></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="stacked">Description</ion-label>
+            <ion-textarea type="text"
+                          formControlName="description"
+            ></ion-textarea>
+        </ion-item>
     </form>
 </ion-content>

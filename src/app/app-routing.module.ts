@@ -5,15 +5,17 @@ import {HeroDetailComponent} from './pages/hero-detail/hero-detail.component';
 import {NotFoundComponent} from './pages/not-found/not-found.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/heroes', pathMatch: 'full' },
-  { path: 'heroes', component: HeroesComponent },
-  { path: 'heroes/:id', component: HeroDetailComponent },
-  { path: '**', component: NotFoundComponent },
+    {path: '', redirectTo: '/heroes', pathMatch: 'full'},
+    {path: 'heroes', component: HeroesComponent},
+    {path: 'heroes/:id', component: HeroDetailComponent},
+    {path: '**', component: NotFoundComponent},
 ];
+
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
-  ],
-  exports: [RouterModule]
+    imports: [
+        RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules})
+    ],
+    exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}

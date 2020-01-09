@@ -22,6 +22,10 @@ export class HeroesComponent implements OnInit {
         this.store.dispatch(new GetHeroesList());
     }
 
+    goToHeroDetails(id) {
+        this.router.navigateByUrl(`/heroes/${id}`);
+    }
+
     delete(hero: Hero): void {
         this.store.dispatch(new DeleteHero(hero.id));
     }

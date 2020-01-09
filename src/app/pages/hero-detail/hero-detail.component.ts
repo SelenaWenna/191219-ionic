@@ -37,12 +37,12 @@ export class HeroDetailComponent implements OnInit {
                         description: this.formBuilder.control(this.hero.description),
                     });
                     this.heroForm.valueChanges.subscribe(value => {
-                      this.hero = {
-                        id: this.hero.id,
-                        img: this.hero.img,
-                        name: value.name,
-                        description: value.description,
-                      }
+                        this.hero = {
+                            id: this.hero.id,
+                            img: this.hero.img,
+                            name: value.name,
+                            description: value.description,
+                        };
                     });
                 });
         });

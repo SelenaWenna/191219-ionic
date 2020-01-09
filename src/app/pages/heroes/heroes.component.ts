@@ -28,7 +28,7 @@ export class HeroesComponent implements OnInit {
     this.store.dispatch(new CreateHero({ name } as Hero));
   }
   delete(hero: Hero): void {
-    this.store.dispatch(new DeleteHero(hero));
+    this.store.dispatch(new DeleteHero(hero.id));
   }
 
   ngOnInit() {}

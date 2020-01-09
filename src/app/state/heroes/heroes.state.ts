@@ -206,12 +206,12 @@ export class HeroesState {
         return this.heroesService.deleteHero(payload).pipe(
           tap((result) => {
             const {heroes} = getState();
-            const {id} = payload;
+            const id = payload;
             console.log(heroes, payload, heroes.filter(h => h.id !== id));
             patchState({
               // loadingState: LoadingStateEnum.Loaded,
               // clientsMap: new Map<string, ClientItemPayloadInterface>(clientsMap)
-              heroes: heroes.filter(h => h.id !== payload.id)
+              heroes: heroes.filter(h => h.id !== id)
             });
           }),
           catchError(err => {

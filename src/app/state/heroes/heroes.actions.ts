@@ -52,6 +52,6 @@ export class UpdateHero {
 export class DeleteHero {
   static readonly type = '[Heroes] Delete hero';
 
-  constructor(public payload: Hero) {
+  constructor(public payload: number) {
   }
 }

@@ -21,7 +21,7 @@ import {HeroesState} from './state/heroes/heroes.state';
 import {HeroesComponent} from './pages/heroes/heroes.component';
 import {HeroDetailComponent} from './pages/hero-detail/hero-detail.component';
 import {SearchbarComponent} from './components/searchbar/searchbar.component';
-// import {NotFoundComponent} from './pages/not-found/not-found.component';
+import {NotFoundComponent} from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +29,7 @@ import {SearchbarComponent} from './components/searchbar/searchbar.component';
     HeroesComponent,
     HeroDetailComponent,
     SearchbarComponent,
+    NotFoundComponent,
   ],
   entryComponents: [],
   imports: [

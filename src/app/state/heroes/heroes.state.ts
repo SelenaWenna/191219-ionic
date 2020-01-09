@@ -111,6 +111,8 @@ export class HeroesState {
     /**
      * method for getting hero
      * @param patchState - method for patching state
+     * @param getState
+     * @param payload
      */
     @Action(GetHero)
     getHero({patchState, getState}: StateContext<HeroesStateModel>, {payload}: GetHero) {
@@ -118,7 +120,6 @@ export class HeroesState {
         return this.heroesService.getHero(payload).pipe(
           tap((result) => {
             const {heroes} = getState();
-            // console.log(result, payload, heroes);
             // const hero = heroes.find(h => h.id === id);
             if (result) {
               const heroesList = heroes.find(h => h.id === payload) ? heroes : [...heroes, result];

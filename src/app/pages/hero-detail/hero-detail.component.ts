@@ -5,6 +5,7 @@ import {Location} from '@angular/common';
 import {Store} from '@ngxs/store';
 import {GetHero, UpdateHero} from '../../state/heroes/heroes.actions';
 import {HeroesState} from '../../state/heroes/heroes.state';
+import {FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-hero-detail',
@@ -17,7 +18,7 @@ export class HeroDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private location: Location,
-    private store: Store
+    private store: Store,
   ) {
     const id = +this.route.snapshot.paramMap.get('id');
     this.getHero(id);

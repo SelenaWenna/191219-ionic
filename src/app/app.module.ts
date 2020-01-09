@@ -21,14 +21,11 @@ import {HeroesState} from './state/heroes/heroes.state';
 import {HeroesComponent} from './pages/heroes/heroes.component';
 import {HeroDetailComponent} from './pages/hero-detail/hero-detail.component';
 import {SearchbarComponent} from './components/searchbar/searchbar.component';
-// import {MessagesComponent} from './components/messages/messages.component';
-import {DashboardComponent} from './pages/dashboard/dashboard.component';
 // import {NotFoundComponent} from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
     HeroesComponent,
     HeroDetailComponent,
     SearchbarComponent,

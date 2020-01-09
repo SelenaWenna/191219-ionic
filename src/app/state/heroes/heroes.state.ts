@@ -20,8 +20,8 @@ import {Observable, of} from 'rxjs';
     defaults: {
         // clientsMap: new Map<string, ClientItemPayloadInterface>(),
         // loadingState: LoadingStateEnum.None
-      heroes: [],
-      search: '',
+        heroes: [],
+        search: '',
     }
 })
 export class HeroesState {
@@ -31,12 +31,12 @@ export class HeroesState {
      * @param id - hero id
      */
     static hero(id: number) {
-      return createSelector(
-        [HeroesState.heroes],
-        (state: Hero[]) => {
-          return state.find(hero => hero.id === id);
-        }
-      );
+        return createSelector(
+            [HeroesState.heroes],
+            (state: Hero[]) => {
+                return state.find(hero => hero.id === id);
+            }
+        );
     }
 
     /**
@@ -49,9 +49,10 @@ export class HeroesState {
         return state.search ? state.heroes.filter(hero => hero.name.toLowerCase().includes(search)) : state.heroes;
         // return Array.from(state.clientsMap.values());
     }
+
     @Selector()
     public static search(state: HeroesStateModel) {
-      return state.search;
+        return state.search;
         // return Array.from(state.clientsMap.values());
     }
 
@@ -65,8 +66,8 @@ export class HeroesState {
     // }
     //
     constructor(
-      private readonly heroesService: HeroesService,
-      private messagesService: MessagesService
+        private readonly heroesService: HeroesService,
+        private messagesService: MessagesService
     ) {
         // super();
     }
@@ -83,28 +84,29 @@ export class HeroesState {
             search: payload
         });
     }
+
     /**
-   * method for getting heroesList
-   * @param patchState - method for patching state
-   */
+     * method for getting heroesList
+     * @param patchState - method for patching state
+     */
     @Action(GetHeroesList)
     getClientList({patchState, getState}: StateContext<HeroesStateModel>) {
         // patchState({loadingState: LoadingStateEnum.Loading});
         return this.heroesService.getHeroesList().pipe(
-          tap((result: Hero[]) => {
+            tap((result: Hero[]) => {
                 // const mapReady = result.map((client) => ([client.id, {...client}]));
                 // @ts-ignore
                 patchState({
-                  // loadingState: LoadingStateEnum.Loaded,
-                  // clientsMap: new Map(mapReady)
-                  heroes: result
+                    // loadingState: LoadingStateEnum.Loaded,
+                    // clientsMap: new Map(mapReady)
+                    heroes: result
                 });
-          }),
-          catchError(err => {
-            console.error(err);
-            // patchState({loadingState: LoadingStateEnum.Error});
-            return of();
-          })
+            }),
+            catchError(err => {
+                console.error(err);
+                // patchState({loadingState: LoadingStateEnum.Error});
+                return of();
+            })
         );
     }
 
@@ -118,23 +120,23 @@ export class HeroesState {
     getHero({patchState, getState}: StateContext<HeroesStateModel>, {payload}: GetHero) {
         // patchState({loadingState: LoadingStateEnum.Loading});
         return this.heroesService.getHero(payload).pipe(
-          tap((result) => {
-            const {heroes} = getState();
-            // const hero = heroes.find(h => h.id === id);
-            if (result) {
-              const heroesList = heroes.find(h => h.id === payload) ? heroes : [...heroes, result];
-              // clientsMap.set(payload, {...client, ...result});
-              patchState({
-                // loadingState: LoadingStateEnum.Loaded,
-                heroes: heroesList
-              });
-            }
-          }),
-          catchError(err => {
-            console.error(err);
-            // patchState({loadingState: LoadingStateEnum.Error});
-            return of();
-          }));
+            tap((result) => {
+                const {heroes} = getState();
+                // const hero = heroes.find(h => h.id === id);
+                if (result) {
+                    const heroesList = heroes.find(h => h.id === payload) ? heroes : [...heroes, result];
+                    // clientsMap.set(payload, {...client, ...result});
+                    patchState({
+                        // loadingState: LoadingStateEnum.Loaded,
+                        heroes: heroesList
+                    });
+                }
+            }),
+            catchError(err => {
+                console.error(err);
+                // patchState({loadingState: LoadingStateEnum.Error});
+                return of();
+            }));
     }
 
     /**
@@ -145,7 +147,7 @@ export class HeroesState {
     createHero({patchState, getState}: StateContext<HeroesStateModel>, {payload}: CreateHero) {
         // patchState({loadingState: LoadingStateEnum.Loading});
         return this.heroesService.addHero(payload).pipe(
-          tap((result) => {
+            tap((result) => {
                 console.log(result);
                 // const {
                 //     id, name
@@ -155,10 +157,10 @@ export class HeroesState {
                 patchState({
                     // loadingState: LoadingStateEnum.Loaded,
                     // clientsMap: new Map<string, ClientItemPayloadInterface>(clientsMap)
-                  heroes: [
-                    ...heroes,
-                    result
-                  ]
+                    heroes: [
+                        ...heroes,
+                        result
+                    ]
                 });
             }),
             catchError(err => {
@@ -167,33 +169,33 @@ export class HeroesState {
             }));
     }
 
-  /**
-   * method for creating hero
-   * @param patchState - method for patching state
-   */
-  @Action(UpdateHero)
-  updateHero({patchState, getState}: StateContext<HeroesStateModel>, {payload}: UpdateHero) {
-    // patchState({loadingState: LoadingStateEnum.Loading});
-    return this.heroesService.updateHero(payload).pipe(
-      tap((result) => {
-        console.log(result);
-        const {
-            id, name
-        } = payload;
-        const {heroes} = getState();
-        const updatedHero = heroes.find(h => h.id === id);
-        updatedHero.name = name;
-        patchState({
-          // loadingState: LoadingStateEnum.Loaded,
-          // clientsMap: new Map<string, ClientItemPayloadInterface>(clientsMap)
-          heroes
-        });
-      }),
-      catchError(err => {
-        console.error(err);
-        return of();
-      }));
-  }
+    /**
+     * method for creating hero
+     * @param patchState - method for patching state
+     */
+    @Action(UpdateHero)
+    updateHero({patchState, getState}: StateContext<HeroesStateModel>, {payload}: UpdateHero) {
+        // patchState({loadingState: LoadingStateEnum.Loading});
+        return this.heroesService.updateHero(payload).pipe(
+            tap((result) => {
+                const {
+                    id, name, description
+                } = payload;
+                const {heroes} = getState();
+                const updatedHero = heroes.find(h => h.id === id);
+                updatedHero.name = name;
+                updatedHero.description = description;
+                patchState({
+                    // loadingState: LoadingStateEnum.Loaded,
+                    // clientsMap: new Map<string, ClientItemPayloadInterface>(clientsMap)
+                    heroes
+                });
+            }),
+            catchError(err => {
+                console.error(err);
+                return of();
+            }));
+    }
 
     /**
      * method for deleting hero
@@ -204,19 +206,18 @@ export class HeroesState {
         // patchState({loadingState: LoadingStateEnum.Loading});
         // const {id, name} = payload.payload;
         return this.heroesService.deleteHero(payload).pipe(
-          tap((result) => {
-            const {heroes} = getState();
-            const id = payload;
-            console.log(heroes, payload, heroes.filter(h => h.id !== id));
-            patchState({
-              // loadingState: LoadingStateEnum.Loaded,
-              // clientsMap: new Map<string, ClientItemPayloadInterface>(clientsMap)
-              heroes: heroes.filter(h => h.id !== id)
-            });
-          }),
-          catchError(err => {
-            console.error(err);
-            return of();
-          }));
+            tap((result) => {
+                const {heroes} = getState();
+                const id = payload;
+                patchState({
+                    // loadingState: LoadingStateEnum.Loaded,
+                    // clientsMap: new Map<string, ClientItemPayloadInterface>(clientsMap)
+                    heroes: heroes.filter(h => h.id !== id)
+                });
+            }),
+            catchError(err => {
+                console.error(err);
+                return of();
+            }));
     }
 }

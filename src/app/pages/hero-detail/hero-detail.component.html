@@ -1,35 +1,31 @@
 <ion-header *ngIf="hero">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
-    </ion-buttons>
-    <ion-buttons slot="end">
-      <ion-button color="primary" (click)="save()">Save</ion-button>
-    </ion-buttons>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-button color="primary" (click)="save()">Save</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 <ion-content>
-      <form onsubmit="save">
+    <form [formGroup]="heroForm">
         <ion-list lines="full" class="ion-no-margin ion-no-padding">
-          <ion-item>
-            <ion-img [src]="hero.img"></ion-img>
-            <ion-label position="stacked">Image<ion-text color="danger"></ion-text></ion-label>
-            <ion-input type="text"
-               [value]="hero.img"
-            ></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="stacked">Name <ion-text color="danger">*</ion-text></ion-label>
-            <ion-input required type="text"
-                       [value]="hero.name"
-            ></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="stacked">Description</ion-label>
-            <ion-textarea type="text"
-                          [value]="hero.description"
-            ></ion-textarea>
-          </ion-item>
+            <ion-img [src]="hero?.img"></ion-img>
+            <ion-item>
+                <ion-label position="stacked">Name
+                    <ion-text color="danger">*</ion-text>
+                </ion-label>
+                <ion-input required type="text"
+                           formControlName="name"
+                ></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked">Description</ion-label>
+                <ion-textarea type="text"
+                              formControlName="description"
+                ></ion-textarea>
+            </ion-item>
         </ion-list>
-      </form>
+    </form>
 </ion-content>

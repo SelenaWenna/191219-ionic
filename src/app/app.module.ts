@@ -22,6 +22,7 @@ import {HeroesComponent} from './pages/heroes/heroes.component';
 import {HeroDetailComponent} from './pages/hero-detail/hero-detail.component';
 import {SearchbarComponent} from './components/searchbar/searchbar.component';
 import {NotFoundComponent} from './pages/not-found/not-found.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,9 @@ import {NotFoundComponent} from './pages/not-found/not-found.component';
     ),
     NgxsModule.forRoot([HeroesState]),
     NgxsReduxDevtoolsPluginModule.forRoot(),
-    NgxsLoggerPluginModule.forRoot()
+    NgxsLoggerPluginModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     StatusBar,

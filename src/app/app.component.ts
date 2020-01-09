@@ -3,9 +3,6 @@ import {Component} from '@angular/core';
 import {Platform} from '@ionic/angular';
 import {SplashScreen} from '@ionic-native/splash-screen/ngx';
 import {StatusBar} from '@ionic-native/status-bar/ngx';
-import {Select, Store} from '@ngxs/store';
-import {HeroesState} from './state/heroes/heroes.state';
-import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +10,6 @@ import {Observable} from 'rxjs';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
-  title = 'Tour of Heroes';
 
   constructor(
     private platform: Platform,

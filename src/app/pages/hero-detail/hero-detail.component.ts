@@ -5,7 +5,7 @@ import {Store} from '@ngxs/store';
 import {GetHero, UpdateHero} from '../../state/heroes/heroes.actions';
 import {HeroesState} from '../../state/heroes/heroes.state';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {Observable} from 'rxjs';
+import {Observable, Subscription} from 'rxjs';
 
 @Component({
     selector: 'app-hero-detail',
@@ -15,7 +15,7 @@ import {Observable} from 'rxjs';
 export class HeroDetailComponent implements OnInit, OnDestroy {
     heroForm: FormGroup;
     hero$: Observable<Hero>;
-    subscriptions: Array<any> = [];
+    subscriptions: Array<Subscription> = [];
 
     constructor(
         private router: Router,
@@ -28,11 +28,6 @@ export class HeroDetailComponent implements OnInit, OnDestroy {
         this._fillHeroForm();
     }
 
-    public getHero() {
-        const {id} = this.route.snapshot.params;
-        return this.store.dispatch(new GetHero(id));
-    }
-
     private _createHeroForm() {
         this.heroForm = this.formBuilder.group(
             {
@@ -42,8 +37,6 @@ export class HeroDetailComponent implements OnInit, OnDestroy {
     }
 
     private _fillHeroForm() {
-        const {id} = this.route.snapshot.params;
-        this.hero$ = this.store.select(HeroesState.hero(id));
         const subscription = this.hero$.subscribe((hero) => {
             if (hero) {
                 this.heroForm.patchValue(hero);
@@ -52,6 +45,18 @@ export class HeroDetailComponent implements OnInit, OnDestroy {
         this.subscriptions.push(subscription);
     }
 
+    /**
+     * Method for getting hero by id from server
+     */
+    getHero() {
+        const {id} = this.route.snapshot.params;
+        return this.store.dispatch(new GetHero(id));
+        this.hero$ = this.store.select(HeroesState.hero(id));
+    }
+
+    /**
+     * Method for saving hero to state
+     */
     save(): void {
         const hero: Hero = this.heroForm.value;
         const {id} = this.route.snapshot.params;

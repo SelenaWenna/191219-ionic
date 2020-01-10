@@ -1,16 +1,16 @@
-<ion-header *ngIf="hero">
+<ion-header>
     <ion-toolbar>
         <ion-buttons slot="start">
             <ion-back-button defaultHref="/"></ion-back-button>
         </ion-buttons>
         <ion-buttons slot="end">
-            <ion-button color="primary" (click)="save()">Save</ion-button>
+            <ion-button color="primary" [disabled]="!heroForm.valid" (click)="save()">Save</ion-button>
         </ion-buttons>
     </ion-toolbar>
 </ion-header>
 <ion-content>
     <form [formGroup]="heroForm">
-        <ion-img class="hero-avatar" [src]="hero?.img"></ion-img>
+        <ion-img class="hero-avatar" [src]="(hero$ | async)?.img"></ion-img>
         <ion-item>
             <ion-label position="stacked">Name
                 <ion-text color="danger">*</ion-text>

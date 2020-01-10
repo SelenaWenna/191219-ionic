@@ -4,7 +4,7 @@
 import {LoadableEntityStateModel} from '../../../shared/base/state/loadable-entity.model';
 
 export class HeroesStateModel extends LoadableEntityStateModel {
-    heroesMap: Map<number, Hero>;
+    heroesMap: Map<string, Hero>;
     search: string;
 }
 
@@ -12,7 +12,7 @@ export class HeroesStateModel extends LoadableEntityStateModel {
  * interface for client item
  */
 export interface Hero {
-    id: number;
+    id: string;
     name: string;
     img?: string;
     description?: string;

@@ -13,7 +13,7 @@ export class GetHeroesList {
 export class SetSearch {
     static readonly type = '[Heroes] Set search string';
 
-    constructor(public payload) {
+    constructor(public payload: string) {
     }
 }
 
@@ -23,7 +23,7 @@ export class SetSearch {
 export class GetHero {
     static readonly type = '[Heroes] Get hero';
 
-    constructor(public payload) {
+    constructor(public payload: string) {
     }
 }
 
@@ -43,6 +43,6 @@ export class UpdateHero {
 export class DeleteHero {
     static readonly type = '[Heroes] Delete hero';
 
-    constructor(public payload: number) {
+    constructor(public payload: string) {
     }
 }

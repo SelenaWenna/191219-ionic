@@ -21,7 +21,7 @@ export class HeroesService {
         return this.http.get<Hero[]>(this.heroesUrl);
     }
 
-    getHero(id: number): Observable<Hero> {
+    getHero(id: string): Observable<Hero> {
         /** GET hero by id. Will 404 if id not found */
         const url = `${this.heroesUrl}/${id}`;
         return this.http.get<Hero>(url);
@@ -32,8 +32,8 @@ export class HeroesService {
         return this.http.put<Hero>(this.heroesUrl, hero, this.httpOptions);
     }
 
-    deleteHero(hero: Hero | number): Observable<Hero> {
-        const id = typeof hero === 'number' ? hero : hero.id;
+    deleteHero(hero: Hero | string): Observable<Hero> {
+        const id = typeof hero === 'string' ? hero : hero.id;
         const url = `${this.heroesUrl}/${id}`;
         return this.http.delete<Hero>(url, this.httpOptions);
     }

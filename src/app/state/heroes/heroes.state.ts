@@ -16,7 +16,7 @@ import {of} from 'rxjs';
 @State<HeroesStateModel>({
     name: 'heroes',
     defaults: {
-        heroesMap: new Map<number, Hero>(),
+        heroesMap: new Map<string, Hero>(),
         loadingState: LoadingStateEnum.None,
         search: '',
     }
@@ -27,7 +27,7 @@ export class HeroesState extends LoadableEntityState {
      * selector for getting hero by id
      * @param id - hero id
      */
-    static hero(id: number) {
+    static hero(id: string) {
         return createSelector(
             [HeroesState],
             (state: HeroesStateModel) => {
@@ -142,7 +142,7 @@ export class HeroesState extends LoadableEntityState {
                 hero.description = description;
                 patchState({
                     loadingState: LoadingStateEnum.Loaded,
-                    heroesMap: new Map<number, Hero>(heroesMap)
+                    heroesMap: new Map<string, Hero>(heroesMap)
                 });
             }),
             catchError(err => {
@@ -165,7 +165,7 @@ export class HeroesState extends LoadableEntityState {
                 heroesMap.delete(id);
                 patchState({
                     loadingState: LoadingStateEnum.Loaded,
-                    heroesMap: new Map<number, Hero>(heroesMap)
+                    heroesMap: new Map<string, Hero>(heroesMap)
                 });
             }),
             catchError(err => {

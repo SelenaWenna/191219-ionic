@@ -50,8 +50,8 @@ export class HeroDetailComponent implements OnInit, OnDestroy {
      */
     getHero() {
         const {id} = this.route.snapshot.params;
-        return this.store.dispatch(new GetHero(id));
         this.hero$ = this.store.select(HeroesState.hero(id));
+        return this.store.dispatch(new GetHero(id));
     }
 
     /**

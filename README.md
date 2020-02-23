@@ -1,4 +1,4 @@
-## Мобильное приложение Tour of heroes
+## Мобильное приложение Tour of heroes with ionicframework
 
 ## Содержание проекта
 - Angular (8.2+)
